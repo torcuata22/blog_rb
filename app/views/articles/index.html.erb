@@ -10,9 +10,9 @@
     <%= link_to "Create New Post", new_article_path %>
     <h1>List of Articles</h1>
     <% @articles.each do |article| %>
-        <strong><%= link_to article.title, article_path(article.id) %></strong>
-        <p><%= truncate(article.content, length: 100) %></p>
-         <br>
+        <%= render "article", article: article %>  
+        
+          <br>
     <% end %>
 </body>
 </html>
